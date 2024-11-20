@@ -1,0 +1,56 @@
+// Colors
+$IS-black: #13182C;
+$IS-indigo: #2E66E5;
+$IS-white: #FFFFFF;
+$IS-slate: #5C667E;
+$IS-cloud: #BDC5D5;
+$IS-graphite: #232940;
+$IS-light-grey: #F7F8F9;
+$IS-green: #158463;
+$IS-red: #C94515;
+
+// Fonts
+// To get the target value, use map-get method, for example: map-get($text-size, h1) = 28px.
+$text-size: (
+	h1: 28px,
+	h2: 20px,
+	h3: 13px,
+	h4: 11px,
+	p1: 15px,
+	p2: 13px,
+	p3: 11px
+);
+$line-height: (
+	h1: 36px,
+	h2: 28px,
+	h3: 20px,
+	h4: 16px,
+	p1: 26px,
+	p2: 20px,
+	p3: 16px
+);
+
+$lg-text-size: (
+	h1: 32px,
+	h2: 24px,
+	h3: 14px,
+	h4: 12px,
+	p1: 16px,
+	p2: 14px,
+	p3: 12px
+);
+
+$lg-line-height: (
+	h1: 40px,
+	h2: 32px,
+	h3: 22px,
+	h4: 18px,
+	p1: 28px,
+	p2: 22px,
+	p3: 18px
+);
+
+//Breakpoints
+$desktop: 1280px;
+$tablet: 768px;
+
