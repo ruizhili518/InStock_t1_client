@@ -7,10 +7,12 @@ import Inventory from "./pages/inventory/Inventory.jsx";
 import ItemDetails from "./pages/inventory/ItemDetails.jsx";
 import AddItem from "./pages/inventory/AddItem.jsx";
 import EditItem from "./pages/inventory/EditItem.jsx";
+import Header from "./components/Header/Header.jsx";
 
 function App() {
     return (
         <BrowserRouter>
+            <Header/>
             <Routes>
                 <Route path="/" element={<Warehouses/>}></Route>
                 <Route path="/warehouse-details" element={<WarehouseDetails/>}></Route>
