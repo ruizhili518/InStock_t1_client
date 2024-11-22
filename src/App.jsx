@@ -7,6 +7,7 @@ import Inventory from "./pages/inventory/Inventory.jsx";
 import ItemDetails from "./pages/inventory/ItemDetails.jsx";
 import AddItem from "./pages/inventory/AddItem.jsx";
 import EditItem from "./pages/inventory/EditItem.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/add-item" element={<AddItem/>}></Route>
                 <Route path="edit-item" element={<EditItem/>}></Route>
             </Routes>
+            <Footer/>
         </BrowserRouter>
     )
 }
