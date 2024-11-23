@@ -2,10 +2,11 @@ import {useEffect, useState} from 'react';
 import './EditWhList.scss';
 import arrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from "axios";
+import {useParams} from "react-router-dom";
 
 // Pass in id as the params. Use 1 as the default for test.
-export default function EditWhList({id=1}) {
-
+export default function EditWhList() {
+    const id = useParams().id;
     useEffect(() => {
         const getData = async () => {
             const userData = await axios.get(`http://localhost:3000/api/warehouses/${id}`)
