@@ -1,17 +1,29 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import './EditWhList.scss';
 import arrow from '../../assets/icons/arrow_back-24px.svg';
+import axios from "axios";
 
-export default function EditWhList() {
+// Pass in id as the params. Use 1 as the default for test.
+export default function EditWhList({id=1}) {
+
+    useEffect(() => {
+        const getData = async () => {
+            const userData = await axios.get(`http://localhost:3000/api/warehouses/${id}`)
+            setFormData(userData.data)
+        }
+        getData();
+    }, []);
+
+
     const [formData, setFormData] = useState({
-        warehouseName: '',
-        streetAddress: '',
+        warehouse_name: '',
+        address: '',
         city: '',
         country: '',
-        contactName: '',
-        position: '',
-        phoneNumber: '',
-        email: ''
+        contact_name: '',
+        contact_position: '',
+        contact_phone: '',
+        contact_email: ''
     });
 
     const handleInputChange = (e) => {
@@ -22,9 +34,10 @@ export default function EditWhList() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
+        const res = await axios.put(`http://localhost:3000/api/warehouses/${id}`,formData);
+        console.log(res);
     };
 
     return (
@@ -40,24 +53,24 @@ export default function EditWhList() {
                     <section className="warehouse-edit__section">
                         <h2>Warehouse Details</h2>
                         <div className="warehouse-edit__form-group">
-                            <label htmlFor="warehouseName">Warehouse Name</label>
+                            <label htmlFor="warehouse_name">Warehouse Name</label>
                             <input
                                 type="text"
-                                id="warehouseName"
-                                name="warehouseName"
-                                value={formData.warehouseName}
+                                id="warehouse_name"
+                                name="warehouse_name"
+                                value={formData.warehouse_name}
                                 onChange={handleInputChange}
                                 placeholder={"Warehouse Name"}
                             />
                         </div>
 
                         <div className="warehouse-edit__form-group">
-                            <label htmlFor="streetAddress">Street Address</label>
+                            <label htmlFor="address">Street Address</label>
                             <input
                                 type="text"
-                                id="streetAddress"
-                                name="streetAddress"
-                                value={formData.streetAddress}
+                                id="address"
+                                name="address"
+                                value={formData.address}
                                 onChange={handleInputChange}
                                 placeholder={"Street Address"}
                             />
@@ -92,48 +105,48 @@ export default function EditWhList() {
                         <h2>Contact Details</h2>
 
                         <div className="warehouse-edit__form-group">
-                            <label htmlFor="contactName">Contact Name</label>
+                            <label htmlFor="contact_name">Contact Name</label>
                             <input
                                 type="text"
-                                id="contactName"
-                                name="contactName"
-                                value={formData.contactName}
+                                id="contact_name"
+                                name="contact_name"
+                                value={formData.contact_name}
                                 onChange={handleInputChange}
                                 placeholder={"Contact Name"}
                             />
                         </div>
 
                         <div className="warehouse-edit__form-group">
-                            <label htmlFor="position">Position</label>
+                            <label htmlFor="contact_position">Position</label>
                             <input
                                 type="text"
-                                id="position"
-                                name="position"
-                                value={formData.position}
+                                id="contact_position"
+                                name="contact_position"
+                                value={formData.contact_position}
                                 onChange={handleInputChange}
                                 placeholder={"Position"}
                             />
                         </div>
 
                         <div className="warehouse-edit__form-group">
-                            <label htmlFor="phoneNumber">Phone Number</label>
+                            <label htmlFor="contact_phone">Phone Number</label>
                             <input
                                 type="tel"
-                                id="phoneNumber"
-                                name="phoneNumber"
-                                value={formData.phoneNumber}
+                                id="contact_phone"
+                                name="contact_phone"
+                                value={formData.contact_phone}
                                 onChange={handleInputChange}
                                 placeholder={"Phone Number"}
                             />
                         </div>
 
                         <div className="warehouse-edit__form-group">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="contact_email">Email</label>
                             <input
                                 type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
+                                id="contact_email"
+                                name="contact_email"
+                                value={formData.contact_email}
                                 onChange={handleInputChange}
                                 placeholder={"Email"}
                             />

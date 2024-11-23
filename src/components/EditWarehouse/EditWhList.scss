@@ -88,6 +88,7 @@
 	  border: 1px solid $IS-cloud;
 	  border-radius: 20px;
 	  font-size: map-get($text-size,p1);
+	  color: $IS-black;
 	  @include tablet{
 		height: 38px;
 		font-size: map-get($lg-text-size,p1);
@@ -102,19 +103,19 @@
 
   &__actions {
 	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
 	background-color: $IS-light-grey;
 	padding: 24px;
+	gap: 16px;
 
 	@include tablet{
 	  flex-direction: row;
+	  justify-content: flex-end;
 	}
 
 	button {
 	  height: 36px;
 	  line-height: 36px;
-	  width: 100%;
+	  width: 50%;
 	  padding:0 16px;
 	  border-radius: 20px;
 	  font-size: map-get($text-size,p1);
