@@ -37,8 +37,12 @@ export default function EditWhList() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await axios.put(`http://localhost:3000/api/warehouses/${id}`,formData);
-        console.log(res);
+        try{
+            const res = await axios.put(`http://localhost:3000/api/warehouses/${id}`,formData);
+            alert("The warehouse details have been updated successfully.")
+        }catch (e) {
+            alert(e.response.data.message);
+        }
     };
 
     return (
