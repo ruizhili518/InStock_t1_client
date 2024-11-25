@@ -25,9 +25,12 @@ export default function AddWhList() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
-        const res = await axios.post(`http://localhost:3000/api/warehouses/`,formData);
-        console.log(res);
+        try{
+            const res = await axios.post(`http://localhost:3000/api/warehouses/`,formData);
+            alert("The warehouse has been created successfully.");
+        }catch (e){
+            alert(e.response.data.message);
+        }
     };
 
     return (
