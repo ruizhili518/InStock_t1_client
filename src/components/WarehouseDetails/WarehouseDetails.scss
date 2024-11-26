@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     margin: -3rem 1rem 1rem;
+    border-radius: 4px;
     @include tablet{
         margin: -4.75rem 2rem 1rem;
     }
@@ -29,6 +30,9 @@
             column-gap: 0.5rem;
             font-size: map.get($text-size,h1);
             font-weight: 600;
+            @include tablet {
+                font-size: 32px;
+            }
         }
         &-2 {
             display: flex;
@@ -40,7 +44,6 @@
             width: 2.25rem;
             height: 2.25rem;
             border-radius: 20px;
-            font-size: map.get($text-size,p2);
             a {
                 display: flex;
             }
@@ -104,6 +107,9 @@
         font-size: map.get($text-size,p3);
         color: $IS-slate;
         margin-bottom: 4px;
+        @include tablet {
+            font-size: 12px;
+        }
     }
     
 }
