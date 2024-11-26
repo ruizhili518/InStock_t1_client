@@ -22,7 +22,7 @@ const Warehouses = () => {
         } catch(e) {
             console.log(e)
         }
-    },[]);
+    },[warehouseList]);
     
     return (
         <div className='warehouse'>

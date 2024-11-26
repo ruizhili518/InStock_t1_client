@@ -36,6 +36,10 @@
                 height: auto;
             }
         }
+        button {
+            background-color: $IS-white;
+            border: none;
+        }
     }
 }
 
@@ -135,6 +139,10 @@
             img {
                 width: 1.5rem;
                 height: auto;
+            }
+            button {
+                background-color: $IS-white;
+                border: none;
             }
         }
         &:hover {
