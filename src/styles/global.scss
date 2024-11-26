@@ -1,3 +1,6 @@
+@use "sass:map";
+// @use './mixins.scss' as *;
+
 // Colors
 $IS-black: #13182C;
 $IS-indigo: #2E66E5;
@@ -71,5 +74,9 @@ body{
 	font-family: "Titillium Web", sans-serif;
 	font-weight: 400;
 	font-style: normal;
+	font-size: map.get($text-size,p2);
+	@media screen and (min-width: 768px) {
+		font-size: 14px;
+	}
 }
 
