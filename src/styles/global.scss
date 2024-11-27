@@ -1,3 +1,4 @@
+@use "sass:map";
 // Colors
 $IS-black: #13182C;
 $IS-indigo: #2E66E5;
@@ -71,9 +72,11 @@ html {
 
 body{
     margin:0;
-    color: $IS-light-grey;
+	background-color: $IS-light-grey;
+    color: $IS-black;
 	font-family: "Titillium Web", sans-serif;
 	font-weight: 400;
 	font-style: normal;
+	font-size: map.get($text-size,p2);
 }
 

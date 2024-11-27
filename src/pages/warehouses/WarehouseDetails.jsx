@@ -1,9 +1,32 @@
 import React from 'react';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from 'axios';
+import WarehouseInfo from '../../components/WarehouseDetails/WarehouseDetails.jsx'
 
 const WarehouseDetails = () => {
+    const [warehouse,setWarehouse] = useState([]);
+
+    const baseURL = import.meta.env.VITE_API_URL;
+
+    //Fetch warehouse details
+    const { warehouseId } = useParams(); 
+
+    useEffect(() => {
+        try{
+            const fetchWarehouse = async() => {
+                const warehouse=await axios.get(`${baseURL}/warehouses/${warehouseId}`);
+                setWarehouse(warehouse.data);
+            }
+            fetchWarehouse();
+        } catch(e) {
+            console.log(e)
+        }
+    },[])
+
     return (
         <div>
-            This is warehouse detail page.
+            <WarehouseInfo warehouse={warehouse}/>
         </div>
     );
 };
