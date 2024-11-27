@@ -1,9 +1,10 @@
 import React from 'react';
+import AddWhList from "../../components/AddWarehouse/AddWhList.jsx";
 
 const AddWarehouse = () => {
     return (
         <div>
-            This is add new warehouse page.
+            <AddWhList/>
         </div>
     );
 };
