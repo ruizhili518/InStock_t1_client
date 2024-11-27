@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import './EditWhList.scss';
 import arrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from "axios";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 // Pass in id as the params. Use 1 as the default for test.
 export default function EditWhList() {
@@ -48,8 +48,10 @@ export default function EditWhList() {
     return (
         <div className="warehouse-edit">
             <header className="warehouse-edit__header">
-                <button className="back-button" onClick={() => console.log('Go back')}>
-                    <img src={arrow} alt="arrow_back"/>
+                <button className="back-button">
+                    <Link to="/">
+                        <img src={arrow} alt="arrow_back"/>
+                    </Link>
                 </button>
                 <h1>Edit Warehouse</h1>
             </header>

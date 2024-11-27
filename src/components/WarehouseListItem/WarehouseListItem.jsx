@@ -43,7 +43,7 @@ export function MobileListItem(props) {
                 <button onClick={openModal}>
                     <img src={delete_icon} />
                 </button>
-                <Link to="/edit-warehouse">
+                <Link to={`/edit-warehouse/${warehouse.id}`}>
                     <img src={edit_icon} />
                 </Link>
             </li>
@@ -87,7 +87,7 @@ export function DesktopListItem(props) {
                 <button onClick={openModal}>
                     <img src={delete_icon} />
                 </button>
-                <Link to="/edit-warehouse">
+                <Link to={`/edit-warehouse/${warehouse.id}`}>
                     <img src={edit_icon} />
                 </Link>
             </li> 
