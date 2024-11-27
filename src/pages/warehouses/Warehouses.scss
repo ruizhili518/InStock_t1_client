@@ -6,6 +6,7 @@
     background-color: $IS-white;
     margin: -4rem 1rem 2rem;
     padding: 2rem 0rem 1rem;
+    border: solid 1px $IS-cloud;
     border-radius: 4px;
     &__header {
         display: flex;
@@ -15,9 +16,6 @@
         &--title {
             font-weight: 600;
             font-size: map.get($text-size,h1);
-            @include tablet {
-                font-size: 32px;
-            }
         }
         @include tablet {
             display: flex;
