@@ -7,8 +7,9 @@ export default function DeleteModal(props) {
 
     const action = props.action;
 
-    //Delete warehouse on click Delete button
-    const baseURL = import.meta.env.VITE_API_URL;
+    // Delete warehouse on click Delete button
+    // const baseURL = import.meta.env.VITE_API_URL;
+    const baseURL = "http://localhost:3000/api";
     
     const deleteWarehouse = async(warehouseId) => {
         try {

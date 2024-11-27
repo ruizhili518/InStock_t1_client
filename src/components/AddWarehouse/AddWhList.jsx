@@ -2,6 +2,7 @@ import {useState} from 'react';
 import './AddWhList.scss';
 import arrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 export default function AddWhList() {
     const [formData, setFormData] = useState({
@@ -34,18 +35,20 @@ export default function AddWhList() {
     };
 
     return (
-        <div className="warehouse-edit">
-            <header className="warehouse-edit__header">
-                <button className="back-button" onClick={() => console.log('Go back')}>
-                    <img src={arrow} alt="arrow_back"/>
+        <div className="warehouse-add">
+            <header className="warehouse-add__header">
+                <button className="back-button">
+                    <Link to="/">
+                        <img src={arrow} alt="arrow_back"/>
+                    </Link>
                 </button>
                 <h1>Add New Warehouse</h1>
             </header>
             <form onSubmit={handleSubmit}>
-                <div className="warehouse-edit__content">
-                    <section className="warehouse-edit__section">
+                <div className="warehouse-add__content">
+                    <section className="warehouse-add__section">
                         <h2>Warehouse Details</h2>
-                        <div className="warehouse-edit__form-group">
+                        <div className="warehouse-add__form-group">
                             <label htmlFor="warehouse_name">Warehouse Name</label>
                             <input
                                 type="text"
@@ -57,7 +60,7 @@ export default function AddWhList() {
                             />
                         </div>
 
-                        <div className="warehouse-edit__form-group">
+                        <div className="warehouse-add__form-group">
                             <label htmlFor="address">Street Address</label>
                             <input
                                 type="text"
@@ -69,7 +72,7 @@ export default function AddWhList() {
                             />
                         </div>
 
-                        <div className="warehouse-edit__form-group">
+                        <div className="warehouse-add__form-group">
                             <label htmlFor="city">City</label>
                             <input
                                 type="text"
@@ -81,7 +84,7 @@ export default function AddWhList() {
                             />
                         </div>
 
-                        <div className="warehouse-edit__form-group">
+                        <div className="warehouse-add__form-group">
                             <label htmlFor="country">Country</label>
                             <input
                                 type="text"
@@ -93,11 +96,11 @@ export default function AddWhList() {
                             />
                         </div>
                     </section>
-                    <div className="warehouse-edit__divider"></div>
-                    <section className="warehouse-edit__section">
+                    <div className="warehouse-add__divider"></div>
+                    <section className="warehouse-add__section">
                         <h2>Contact Details</h2>
 
-                        <div className="warehouse-edit__form-group">
+                        <div className="warehouse-add__form-group">
                             <label htmlFor="contact_name">Contact Name</label>
                             <input
                                 type="text"
@@ -109,7 +112,7 @@ export default function AddWhList() {
                             />
                         </div>
 
-                        <div className="warehouse-edit__form-group">
+                        <div className="warehouse-add__form-group">
                             <label htmlFor="contact_position">Position</label>
                             <input
                                 type="text"
@@ -121,7 +124,7 @@ export default function AddWhList() {
                             />
                         </div>
 
-                        <div className="warehouse-edit__form-group">
+                        <div className="warehouse-add__form-group">
                             <label htmlFor="contact_phone">Phone Number</label>
                             <input
                                 type="tel"
@@ -133,7 +136,7 @@ export default function AddWhList() {
                             />
                         </div>
 
-                        <div className="warehouse-edit__form-group">
+                        <div className="warehouse-add__form-group">
                             <label htmlFor="contact_email">Email</label>
                             <input
                                 type="email"
@@ -147,9 +150,11 @@ export default function AddWhList() {
                     </section>
                 </div>
 
-                <div className="warehouse-edit__actions">
+                <div className="warehouse-add__actions">
                     <button type="button" className="cancel">
-                        Cancel
+                        <Link to="/">
+                            Cancel
+                        </Link>
                     </button>
                     <button type="submit" className="save">
                         + Add Warehouse

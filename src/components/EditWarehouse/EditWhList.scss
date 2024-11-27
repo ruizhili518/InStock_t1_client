@@ -1,8 +1,17 @@
 @use '../../styles/global.scss' as *;
 @use '../../styles/mixins.scss' as *;
 .warehouse-edit {
-  max-width: $desktop;
-  margin: 0 auto;
+  background-color: $IS-white;
+  margin: -4rem 1rem 2rem;
+  border: solid 1px $IS-cloud;
+  border-radius: 4px;
+
+  @include tablet {
+	margin: -6rem 1rem 2rem;
+  }
+  @include desktop {
+	margin: -6rem 6rem 2rem;
+  }
 
   &__header {
 	display: flex;
@@ -11,6 +20,7 @@
 	gap: 4px;
 
 	h1 {
+	  font-weight: 600;
 	  font-size: map-get($text-size,h1);
 	  line-height: map-get($line-height,h1);
 	  color: $IS-black;
