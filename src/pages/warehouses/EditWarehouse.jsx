@@ -1,9 +1,10 @@
 import React from 'react';
+import EditWhList from "../../components/EditWarehouse/EditWhList.jsx";
 
 const EditWarehouse = () => {
     return (
         <div>
-            This is edit warehouse page.
+            <EditWhList/>
         </div>
     );
 };

@@ -18,11 +18,11 @@ function App() {
                 <Route path="/" element={<Warehouses/>}></Route>
                 <Route path="/warehouse-details/:warehouseId" element={<WarehouseDetails/>}></Route>
                 <Route path="/add-warehouse" element={<AddWarehouse/>}></Route>
-                <Route path="/edit-warehouse" element={<EditWarehouse/>}></Route>
+                <Route path="/edit-warehouse/:id" element={<EditWarehouse/>}></Route>
                 <Route path="/inventory" element={<Inventory/>}></Route>
                 <Route path="/item-details" element={<ItemDetails/>}></Route>
                 <Route path="/add-item" element={<AddItem/>}></Route>
-                <Route path="edit-item" element={<EditItem/>}></Route>
+                <Route path="/edit-item" element={<EditItem/>}></Route>
             </Routes>
             <Footer/>
         </BrowserRouter>
