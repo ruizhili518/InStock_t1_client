@@ -1,0 +1,21 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
+@use "sass:map";
+
+.AddNewButton {
+    display: inline-block;
+    background-color: $IS-indigo;
+    text-decoration: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 2.25rem;
+    padding: 4px 0;
+    text-align: center;
+    color: $IS-white;
+    &:hover {
+        background-color: $IS-graphite;
+    }
+    @include tablet {
+        width: 70%;
+    }
+}

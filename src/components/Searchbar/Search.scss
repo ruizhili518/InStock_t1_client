@@ -1,0 +1,35 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
+@use "sass:map";
+
+.searchbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 1rem;
+    height: 2.25rem;
+    border: solid 1px $IS-cloud;
+    border-radius: 20px;
+    width: 100%;
+    &__input {
+        width: 90%;
+        border: none;
+        &::placeholder {
+            font-family:"Titillium Web", sans-serif;
+            font-size: map.get($text-size,p2);
+            color: $IS-slate;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    &__button {
+        background-color: $IS-white;
+        border: none;
+    }
+    &:hover {
+        border-color:$IS-indigo;
+    }
+    @include tablet {
+        width: 70%;
+    }
+}

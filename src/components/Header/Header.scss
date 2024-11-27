@@ -3,7 +3,8 @@
 
 .header {
     background-color: $IS-graphite;
-    padding: 1rem 1rem 4rem;
+    padding: 1rem;
+    padding-bottom: 5.5rem;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
@@ -27,11 +28,14 @@
                 background-color: $IS-black;
                 border-radius: 1.25rem;
             }
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
     @include tablet {
         padding: 2rem;
-        padding-bottom: 6rem;
+        padding-bottom: 8rem;
         flex-direction: row;
         justify-content: space-between;
         column-gap: 16rem;
@@ -40,6 +44,6 @@
         }
     }
     @include desktop {
-        padding: 2rem 6rem 6rem;
+        padding: 2rem 6rem 8rem;
     }
 }
