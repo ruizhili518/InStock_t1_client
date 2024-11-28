@@ -10,12 +10,12 @@ const WarehouseDetails = () => {
     const baseURL = import.meta.env.VITE_API_URL;
 
     //Fetch warehouse details
-    const { warehouseId } = useParams(); 
+    const { warehouseid } = useParams(); 
 
     useEffect(() => {
         try{
             const fetchWarehouse = async() => {
-                const warehouse=await axios.get(`${baseURL}/warehouses/${warehouseId}`);
+                const warehouse=await axios.get(`${baseURL}/warehouses/${warehouseid}`);
                 setWarehouse(warehouse.data);
             }
             fetchWarehouse();

@@ -26,7 +26,7 @@ function WarehouseInfo(props) {
                     <p>{warehouse_name}</p>
                 </div>
                 <div className='warehouse-details__heading-2'>
-                    <Link to="/edit-warehouse">
+                    <Link to={`/edit-warehouse/${id}`}>
                         <img src={editwhite}/>
                     </Link>
                     <p>Edit</p>

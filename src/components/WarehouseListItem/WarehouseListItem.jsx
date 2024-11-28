@@ -8,7 +8,17 @@ import DeleteModal from "../DeleteModal/Delete";
 
 export function MobileListItem(props) {
 
-    const warehouse = props.warehouse;
+    const {
+        id,
+        warehouse_name,
+        address,
+        city,
+        country,
+        contact_name,
+        contact_position,
+        contact_phone,
+        contact_email
+    } = props.warehouse;
 
     const [modalState, setmodalState] = useState(false);
 
@@ -21,37 +31,37 @@ export function MobileListItem(props) {
         <ul className="mobile-warehouse">
             <li className="mobile-warehouse__item">
                 <p className="mobile-warehouse__item--title">WAREHOUSE</p>
-                <Link to={`/warehouses/${warehouse.id}`}>
-                    {warehouse.warehouse_name}
+                <Link className="mobile-warehouse__item--link" to={`/warehouses/${id}`}>
+                    {warehouse_name}
                     <img src={chevron}/>
                 </Link>
             </li>
             <li className="mobile-warehouse__item">
                 <p className="mobile-warehouse__item--title">CONTACT NAME</p>
-                <p>{warehouse.contact_name}</p>
+                <p>{contact_name}</p>
             </li>
             <li className="mobile-warehouse__item">
                 <p className="mobile-warehouse__item--title">ADDRESS</p>
-                <p>{warehouse.address}</p>
+                <p>{`${address}, ${city}, ${country}`}</p>
             </li>
             <li className="mobile-warehouse__item">
                 <p className="mobile-warehouse__item--title">CONTACT INFORMATION</p>
-                <p>{warehouse.contact_phone}</p>
-                <p>{warehouse.contact_email}</p>
+                <p>{contact_phone}</p>
+                <p>{contact_email}</p>
             </li>
             <li className="mobile-warehouse__item">
                 <button onClick={openModal}>
                     <img src={delete_icon} />
                 </button>
-                <Link to={`/edit-warehouse/${warehouse.id}`}>
+                <Link to={`/edit-warehouse/${id}`}>
                     <img src={edit_icon} />
                 </Link>
             </li>
         </ul>
         <DeleteModal 
             toggle={modalState} 
-            warehousename={warehouse.warehouse_name}
-            warehouseId={warehouse.id}
+            warehousename={warehouse_name}
+            warehouseId={id}
             action={openModal}
             >
         </DeleteModal>
@@ -60,7 +70,17 @@ export function MobileListItem(props) {
 }
 
 export function DesktopListItem(props) {
-    const warehouse = props.warehouse;
+    const {
+        id,
+        warehouse_name,
+        address,
+        city,
+        country,
+        contact_name,
+        contact_position,
+        contact_phone,
+        contact_email
+    } = props.warehouse;
 
     const [modalState, setmodalState] = useState(false);
 
@@ -72,30 +92,30 @@ export function DesktopListItem(props) {
         <>
         <ul className="desktop-warehouse__row">
             <li className="desktop-warehouse__row--1">
-                <Link to={`/warehouses/${warehouse.id}`}>
-                    {warehouse.warehouse_name}
+                <Link className="mobile-warehouse__item--link" to={`/warehouses/${id}`}>
+                    {warehouse_name}
                     <img src={chevron}/>
                 </Link>
             </li>
-            <li className="desktop-warehouse__row--2">{warehouse.address}</li>
-            <li className="desktop-warehouse__row--3">{warehouse.contact_name}</li>
+            <li className="desktop-warehouse__row--2">{`${address}, ${city}, ${country}`}</li>
+            <li className="desktop-warehouse__row--3">{contact_name}</li>
             <li className="desktop-warehouse__row--4">
-                <p>{warehouse.contact_phone}</p>
-                <p>{warehouse.contact_email}</p>
+                <p>{contact_phone}</p>
+                <p>{contact_email}</p>
             </li>
             <li className="desktop-warehouse__row--5">
                 <button onClick={openModal}>
                     <img src={delete_icon} />
                 </button>
-                <Link to={`/edit-warehouse/${warehouse.id}`}>
+                <Link to={`/edit-warehouse/${id}`}>
                     <img src={edit_icon} />
                 </Link>
             </li> 
         </ul>
         <DeleteModal 
         toggle={modalState} 
-        warehousename={warehouse.warehouse_name}
-        warehouseId={warehouse.id}
+        warehousename={warehouse_name}
+        warehouseId={id}
         action={openModal}>
         </DeleteModal>
         </>

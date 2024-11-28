@@ -28,10 +28,12 @@
             display: flex;
             align-items: center;
             column-gap: 0.5rem;
-            font-size: map.get($text-size,h1);
-            font-weight: 600;
-            @include tablet {
-                font-size: 32px;
+            p {
+                font-size: map.get($text-size,h1);
+                font-weight: 600;
+                @include tablet {
+                    font-size: 32px;
+                }
             }
         }
         &-2 {
@@ -59,6 +61,7 @@
                 padding: 0 1rem;
                 p {
                     display: block;
+                    color: $IS-white;
                 }
             }
         }

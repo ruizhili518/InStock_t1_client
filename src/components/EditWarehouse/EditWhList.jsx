@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import './EditWhList.scss';
 import arrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from "axios";
-import {Link, useParams} from "react-router-dom";
+import {Link, useParams, useNavigate} from "react-router-dom";
 
 // Pass in id as the params. Use 1 as the default for test.
 export default function EditWhList() {
@@ -35,6 +35,8 @@ export default function EditWhList() {
         }));
     };
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
@@ -43,6 +45,7 @@ export default function EditWhList() {
         }catch (e) {
             alert(e.response.data.message);
         }
+        navigate('/');
     };
 
     return (
@@ -163,7 +166,9 @@ export default function EditWhList() {
 
                 <div className="warehouse-edit__actions">
                     <button type="button" className="cancel">
-                        Cancel
+                        <Link to="/">
+                            Cancel
+                        </Link>
                     </button>
                     <button type="submit" className="save">
                         Save

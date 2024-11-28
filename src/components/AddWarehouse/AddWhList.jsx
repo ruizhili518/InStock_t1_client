@@ -2,7 +2,7 @@ import {useState} from 'react';
 import './AddWhList.scss';
 import arrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export default function AddWhList() {
     const [formData, setFormData] = useState({
@@ -24,6 +24,8 @@ export default function AddWhList() {
         }));
     };
 
+    const navigate = useNavigate();
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
@@ -32,6 +34,7 @@ export default function AddWhList() {
         }catch (e){
             alert(e.response.data.message);
         }
+        navigate('/');
     };
 
     return (
