@@ -100,7 +100,7 @@ const Inventory = () => {
             </div>
             <div className="inv__item--actions">
               <button onClick={() => openModal(item)} className="inv__item--actions--btn">
-                <img src={delete_icon} alt="Delete item" />
+                <img className="inv__item--actions--btn" src={delete_icon} alt="Delete item" />
               </button>
               <Link to={`/edit-item/${item.id}`} className="inv__item--actions--btn inv__item--actions--btn--edit">
                 <img src={edit_icon} alt="Edit item" />

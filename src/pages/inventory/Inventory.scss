@@ -174,7 +174,7 @@
             flex-direction: row;
             justify-content: space-between;
             &--btn {
-                background-color: $IS-white;
+                background-color:transparent;
                 border: none;
                 &--edit{
                     @include tablet {
