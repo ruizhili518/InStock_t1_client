@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     padding: 4px 1rem;
-    height: 2.25rem;
+    height: 36px;
     border: solid 1px $IS-cloud;
     border-radius: 20px;
     width: 100%;
@@ -31,5 +31,6 @@
     }
     @include tablet {
         width: 70%;
+        height: 38px;
     }
 }
