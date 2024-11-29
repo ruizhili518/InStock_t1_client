@@ -45,7 +45,7 @@ const Inventory = () => {
         </div>
         <div className="inv__header--right">
           <Searchbar />
-          <AddNewItem path="/add-warehouse" text="+ Add New Item" />
+          <AddNewItem path="/add-inventory" text="+ Add New Item" />
         </div>
       </div>
 
