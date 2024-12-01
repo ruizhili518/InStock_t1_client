@@ -176,6 +176,7 @@
             &--btn {
                 background-color:transparent;
                 border: none;
+                cursor:pointer;
                 &--edit{
                     @include tablet {
                         padding-left:8px;

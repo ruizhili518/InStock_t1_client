@@ -8,6 +8,7 @@ import chevron from '../../assets/icons/chevron_right-24px.svg';
 import delete_icon from '../../assets/icons/delete_outline-24px.svg'; 
 import edit_icon from '../../assets/icons/edit-24px.svg';
 import sort from '../../assets/icons/sort-24px.svg';
+import DeleteModal from "../../components/DeleteModal/DeleteInventory";
 
 
 const Inventory = () => {
@@ -28,13 +29,13 @@ const Inventory = () => {
   }, []);
 
   const openModal = (item) => {
-    setSelectedItem(item); // Pass the current item to the modal
-    setModalState(true);
+    setSelectedItem(item); // Set the selected item
+    setModalState(true); // Open the modal
   };
 
   const closeModal = () => {
-    setModalState(false);
-    setSelectedItem(null);
+    setSelectedItem(null); // Clear the selected item
+    setModalState(false); // Close the modal
   };
 
   return (
@@ -100,17 +101,24 @@ const Inventory = () => {
             </div>
             <div className="inv__item--actions">
               <button onClick={() => openModal(item)} className="inv__item--actions--btn">
-                <img className="inv__item--actions--btn" src={delete_icon} alt="Delete item" />
+                <img className="inv__item--actions--btn" src={delete_icon} alt="Delete item"/>
               </button>
               <Link to={`/edit-item/${item.id}`} className="inv__item--actions--btn inv__item--actions--btn--edit">
                 <img src={edit_icon} alt="Edit item" />
               </Link>
             </div>
+
           </div>
         ))}
       </div>
-
-      
+      {selectedItem && (
+        <DeleteModal
+          toggle={modalState}
+          inventoryname={selectedItem.item_name}
+          inventoryId={selectedItem.id}
+          action={closeModal}
+        />
+      )}
     </div>
   );
 };
