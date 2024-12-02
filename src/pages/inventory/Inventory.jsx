@@ -78,7 +78,7 @@ const Inventory = () => {
             <div className="inv__item--information">
               <div className="inv__item--left">
                 <p className="inv__item--title">INVENTORY ITEM</p>
-                <Link to={`/item-details/${item.id}`} className="inv__item--value inv__item--link">
+                <Link to={`/inventory/${item.id}`} className="inv__item--value inv__item--link">
                   {item.item_name}
                   <img src={chevron} alt="View item details" />
                 </Link>
