@@ -1,8 +1,8 @@
-import arrowback from '../../assets/icons/arrow_back-24px.svg';
-import {Link, useParams, useNavigate} from "react-router-dom";
-import {useEffect, useState, useRef} from 'react';
 import axios from "axios";
-import './EditInventory.scss'
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from "react-router-dom";
+import arrowback from '../../assets/icons/arrow_back-24px.svg';
+import './EditInventory.scss';
 
 export default function EditInventory() {
     //Get warehouse list for the dropdown in the form
@@ -57,7 +57,7 @@ export default function EditInventory() {
     //Handle form change and submit form
     //Handle simple text field
     const handleTextInput = (e) => {
-        const { name, value} = e.target.value;
+        const { name, value} = e.target;
         
         setTextInput(prev => ({
             ...prev,
@@ -103,15 +103,15 @@ export default function EditInventory() {
         }
         console.log(updateInventory)
 
-        // try{
-        //     const res = await axios.post(`${baseURL}/inventories`,newInventory);
-        //     alert("The item has been created successfully.");
-        //     console.log(res);
-        // }catch (e){
-        //     alert(e.response.data.message);
-        // }
+        try{
+            const res = await axios.put(`${baseURL}/inventories/${inventoryid}`,updateInventory);
+            alert("The item has been updated successfully.");
+            console.log(res);
+        }catch (e){
+            alert(e.response.data.message);
+        }
 
-        // navigate('/inventory');
+        navigate('/inventory');
     }
 
     return (
