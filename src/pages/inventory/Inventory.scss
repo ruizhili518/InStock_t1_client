@@ -1,0 +1,200 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
+@use "sass:map";
+
+.inv {
+    background-color: $IS-white;
+    margin: -4rem 16px 2rem;
+    padding: 2rem 0rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    @include tablet {
+        margin: -6rem 32px 2rem;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    @include desktop {
+        width: $desktop;
+        margin: -6rem auto 2rem;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        padding: 0 24px 24px;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 1rem;
+        padding: 2rem 32px;
+        height: 6rem;
+    }
+        &--title {
+            font-weight: 600;
+            font-size: map.get($text-size,h1);
+            @include tablet {
+                width: 100%;
+            }
+        }
+        &--right {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+            @include tablet {
+                flex-direction: row;
+                column-gap: 24px;
+                width:50%;
+                @include desktop {
+                    width: 40%;
+                }
+            }
+        }
+        
+        
+    
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            display: table;
+            width: 100%;
+        }
+        
+    }
+
+    &__item{
+        border-top: 1px solid #ccc;
+        padding: 24px;
+        @include tablet {
+            display: table-row;
+            border-top: 0px solid #ccc;
+            vertical-align: middle;
+            height: 4rem;
+         }
+        &:hover{
+            background-color:rgba(46, 102, 229, 0.07) ;
+        }
+        
+        &--information {
+            display: flex;
+            align-items: left;
+            text-decoration: none;
+            color: inherit;
+            @include tablet {
+                display: contents; 
+            }
+        }
+        &--title {
+            color: $IS-slate;
+            font-size: map.get($text-size,p3);
+            height:20px;
+            @include tablet {
+                display:none;
+            }
+        }
+        &--left,&--right{
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+            width:50%;
+            @include tablet {
+                display: contents; 
+            }
+        }
+  
+        &--link{
+            text-decoration: none;
+            color: $IS-indigo;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            column-gap: 4px;
+            img {
+                width: 1rem;
+                height: auto;
+            }
+            @include tablet {
+                padding-left:36px;
+            }
+        }
+        &--header{
+            display:none;
+            background-color:$IS-light-grey;
+            @include tablet {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            &--first{
+                @include tablet {
+                    padding-left:36px;
+                }
+            }
+            &--icon{
+                vertical-align: middle;
+            }
+        }
+        &--value{
+            padding-bottom:16px;
+            @include tablet {
+                display: table-cell;
+                border-top: 1px solid #ccc; 
+                vertical-align: middle;
+                height: 4rem;
+                padding-bottom:0;
+                
+            }
+        }
+        &--tag {
+            padding: 0px 8px;
+            height: 24px;
+            border-radius: 20px; 
+            text-transform: uppercase; 
+            display: inline-flex;
+            align-items: center;
+            width: auto;
+            background-clip: padding-box;
+            
+            &.tag--in-stock {
+              background-color: rgba(21, 132, 99, 0.07); 
+              color: $IS-green; 
+            }
+          
+            &.tag--out-of-stock {
+              background-color: rgba(201, 69, 21, 0.07); 
+              color: $IS-red; 
+            }
+        }
+        &--actions {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            &--btn {
+                background-color:transparent;
+                border: none;
+                cursor:pointer;
+                &--edit{
+                    @include tablet {
+                        padding-left:8px;
+                    }
+                }
+            }
+            @include tablet {
+                width:15%;
+                display:table-cell;
+                border-top: 1px solid #ccc; 
+                vertical-align: middle;
+                height: 4rem;
+            }
+        }
+    }
+    
+
+}
+
+
+

@@ -45,6 +45,7 @@
         width: 1.5rem;
         height: auto;
         align-self: end;
+        cursor:pointer;
     }
     &__question {
         font-weight: 600;
@@ -68,12 +69,14 @@
             &:hover {
                 border-color: $IS-indigo;
                 color: $IS-indigo;
+                cursor:pointer;
             }
         }
         &--delete {
             background-color: $IS-red;
             color: $IS-white;
             border: none;
+            cursor:pointer;
             &:hover {
                 background-color: $IS-graphite;
             }
