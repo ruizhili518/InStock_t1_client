@@ -11,7 +11,7 @@ export default function DeleteModal(props) {
     
     const deleteInventory = async(inventoryId) => {
         try {
-            await axios.delete(`${baseURL}/inventory/${inventoryId}`);
+            await axios.delete(`${baseURL}/inventories/${inventoryId}`);
         } catch(e) {
             console.log(e)
         }

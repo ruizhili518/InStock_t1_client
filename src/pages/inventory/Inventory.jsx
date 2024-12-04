@@ -26,7 +26,7 @@ const Inventory = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [inventoryList]);
 
   const openModal = (item) => {
     setSelectedItem(item); // Set the selected item
