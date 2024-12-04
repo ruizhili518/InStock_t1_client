@@ -1,9 +1,10 @@
 import React from 'react';
+import EditInventory from '../../components/EditItem/EditInventory';
 
 const EditItem = () => {
     return (
         <div>
-            This is edit item page.
+            <EditInventory/>
         </div>
     );
 };
