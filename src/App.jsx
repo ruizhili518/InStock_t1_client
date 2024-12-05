@@ -22,7 +22,7 @@ function App() {
                 <Route path="/inventory" element={<Inventory/>}></Route>
                 <Route path="/inventory/:itemid" element={<ItemDetails/>}></Route>
                 <Route path="/add-item" element={<AddItem/>}></Route>
-                <Route path="/edit-item" element={<EditItem/>}></Route>
+                <Route path="/edit-item/:inventoryid" element={<EditItem/>}></Route>
             </Routes>
             <Footer/>
         </BrowserRouter>
