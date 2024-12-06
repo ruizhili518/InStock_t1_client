@@ -58,7 +58,7 @@ function ItemDetails() {
           <p>{item_name}</p>
         </div>
         <div className="inventory__details--header--button--edit">
-          <Link to={`/edit-inventory/${itemid}`}>
+          <Link to={`/edit-item/${itemid}`}>
             <img src={editwhite} alt="Edit" />
           </Link>
           <p>Edit</p>
