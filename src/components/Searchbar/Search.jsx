@@ -1,4 +1,4 @@
-import search from '../../assets/icons/search-24px.svg'; 
+import search from '../../assets/icons/search-24px.svg';
 import './Search.scss';
 
 function Searchbar() {

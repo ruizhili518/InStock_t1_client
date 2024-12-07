@@ -1,6 +1,6 @@
+import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo/InStock-Logo.svg';
-import { Link , NavLink } from "react-router-dom";
-import './Header.scss'
+import './Header.scss';
 
 
 function Header() {

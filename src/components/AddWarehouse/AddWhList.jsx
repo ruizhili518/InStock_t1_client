@@ -1,10 +1,12 @@
-import {useState} from 'react';
-import './AddWhList.scss';
-import arrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
+import { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import arrow from '../../assets/icons/arrow_back-24px.svg';
+import './AddWhList.scss';
 
 export default function AddWhList() {
+    const baseURL = import.meta.env.VITE_API_URL;
+
     const [formData, setFormData] = useState({
         warehouse_name: '',
         address: '',
@@ -29,7 +31,7 @@ export default function AddWhList() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const res = await axios.post(`http://localhost:3000/api/warehouses/`,formData);
+            const res = await axios.post(`${baseURL}/warehouses`,formData);
             alert("The warehouse has been created successfully.");
         }catch (e){
             alert(e.response.data.message);

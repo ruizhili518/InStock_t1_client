@@ -1,14 +1,14 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Warehouses from "./pages/warehouses/Warehouses.jsx";
-import WarehouseDetails from "./pages/warehouses/WarehouseDetails.jsx";
-import AddWarehouse from "./pages/warehouses/AddWarehouse.jsx";
-import EditWarehouse from "./pages/warehouses/EditWarehouse.jsx";
-import Inventory from "./pages/inventory/Inventory.jsx";
-import ItemDetails from "./pages/inventory/ItemDetails.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer/Footer.jsx";
+import Header from "./components/Header/Header.jsx";
 import AddItem from "./pages/inventory/AddItem.jsx";
 import EditItem from "./pages/inventory/EditItem.jsx";
-import Header from "./components/Header/Header.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import Inventory from "./pages/inventory/Inventory.jsx";
+import ItemDetails from "./pages/inventory/ItemDetails.jsx";
+import AddWarehouse from "./pages/warehouses/AddWarehouse.jsx";
+import EditWarehouse from "./pages/warehouses/EditWarehouse.jsx";
+import WarehouseDetails from "./pages/warehouses/WarehouseDetails.jsx";
+import Warehouses from "./pages/warehouses/Warehouses.jsx";
 
 function App() {
     return (

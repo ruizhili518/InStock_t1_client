@@ -8,8 +8,7 @@ export default function EditInventory() {
     //Get warehouse list for the dropdown in the form
     const [warehouseList, setWarehouseList] = useState([]);
 
-    //const baseURL = import.meta.env.VITE_API_URL; as the env file is ignored in git, so hard-code the baseURL now.
-    const baseURL = "http://localhost:3000/api";
+    const baseURL = import.meta.env.VITE_API_URL;
 
     const fetchWarehouses = async() => {
         const warehousedata = await axios.get(`${baseURL}/warehouses`);
@@ -101,12 +100,10 @@ export default function EditInventory() {
             quantity: Number((status === "Out of Stock") ? "0" : quantity),
             warehouse_id:getWarehouseId.id
         }
-        console.log(updateInventory)
 
         try{
             const res = await axios.put(`${baseURL}/inventories/${inventoryid}`,updateInventory);
             alert("The item has been updated successfully.");
-            console.log(res);
         }catch (e){
             alert(e.response.data.message);
         }

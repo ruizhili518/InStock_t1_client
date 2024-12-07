@@ -10,9 +10,8 @@ const Warehouses = () => {
     const [warehouseList, setWarehouseList] = useState([]);
     
     //Fetch warehouselist
-    //const baseURL = import.meta.env.VITE_API_URL; as the env file is ignored in git, so hard-code the baseURL now.
-    const baseURL = "http://localhost:3000/api";
-
+    const baseURL = import.meta.env.VITE_API_URL;
+    
     useEffect(() => {
         try {
             const fetchWarehouses = async() => {

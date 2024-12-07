@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import { Link } from "react-router-dom";
-import {useState} from 'react';
 import chevron from '../../assets/icons/chevron_right-24px.svg';
-import delete_icon from '../../assets/icons/delete_outline-24px.svg'; 
-import edit_icon from '../../assets/icons/edit-24px.svg'; 
-import './WarehouseListItem.scss'
+import delete_icon from '../../assets/icons/delete_outline-24px.svg';
+import edit_icon from '../../assets/icons/edit-24px.svg';
 import DeleteModal from "../DeleteModal/Delete";
+import './WarehouseListItem.scss';
 
 export function MobileListItem(props) {
 

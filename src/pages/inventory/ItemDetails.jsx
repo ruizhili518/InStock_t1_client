@@ -6,6 +6,7 @@ import editwhite from '../../assets/icons/edit-white-24px.svg';
 import './ItemDetails.scss';
 
 function ItemDetails() {
+  const baseURL = import.meta.env.VITE_API_URL;
   const { itemid } = useParams(); // Extract `id` from URL params
   const [itemDetails, setItemDetails] = useState(null); // State to hold the item details
   const [loading, setLoading] = useState(true); // Loading state
@@ -14,7 +15,7 @@ function ItemDetails() {
   useEffect(() => {
     const fetchItemDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/inventories/${itemid}`); // Correct URL
+        const response = await axios.get(`${baseURL}/inventories/${itemid}`); // Correct URL
         setItemDetails(response.data); // Set the item details in state
         setLoading(false); // Set loading to false
       } catch (error) {

@@ -1,15 +1,16 @@
-import {useEffect, useState} from 'react';
-import './EditWhList.scss';
-import arrow from '../../assets/icons/arrow_back-24px.svg';
 import axios from "axios";
-import {Link, useParams, useNavigate} from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from "react-router-dom";
+import arrow from '../../assets/icons/arrow_back-24px.svg';
+import './EditWhList.scss';
 
-// Pass in id as the params. Use 1 as the default for test.
 export default function EditWhList() {
+    const baseURL = import.meta.env.VITE_API_URL;
+
     const id = useParams().id;
     useEffect(() => {
         const getData = async () => {
-            const userData = await axios.get(`http://localhost:3000/api/warehouses/${id}`)
+            const userData = await axios.get(`${baseURL}/warehouses/${id}`)
             setFormData(userData.data)
         }
         getData();
@@ -40,7 +41,7 @@ export default function EditWhList() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const res = await axios.put(`http://localhost:3000/api/warehouses/${id}`,formData);
+            const res = await axios.put(`${baseURL}/warehouses/${id}`,formData);
             alert("The warehouse details have been updated successfully.")
         }catch (e) {
             alert(e.response.data.message);

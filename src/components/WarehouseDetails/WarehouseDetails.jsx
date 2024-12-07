@@ -1,16 +1,18 @@
-import arrowback from '../../assets/icons/arrow_back-24px.svg';
-import editwhite from '../../assets/icons/edit-white-24px.svg';
-import { Link } from 'react-router-dom';
-import './WarehouseDetails.scss'
-import {useEffect, useState} from "react";
 import axios from "axios";
-import sort from "../../assets/icons/sort-24px.svg";
+import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+import arrowback from '../../assets/icons/arrow_back-24px.svg';
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 import delete_icon from "../../assets/icons/delete_outline-24px.svg";
 import edit_icon from "../../assets/icons/edit-24px.svg";
+import editwhite from '../../assets/icons/edit-white-24px.svg';
+import sort from "../../assets/icons/sort-24px.svg";
 import DeleteModal from "../DeleteModal/DeleteInventory.jsx";
+import './WarehouseDetails.scss';
 
 function WarehouseInfo(props) {
+    const baseURL = import.meta.env.VITE_API_URL;
+
     const {
         id,
         warehouse_name,
@@ -30,7 +32,7 @@ function WarehouseInfo(props) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/api/inventories");
+                const response = await axios.get(`${baseURL}/inventories`);
                 const warehouseData = response.data.filter(item => item.warehouse_name === warehouse_name);
                 setInventoryList(warehouseData);
             } catch (error) {

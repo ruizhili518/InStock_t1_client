@@ -1,15 +1,14 @@
-import arrowback from '../../assets/icons/arrow_back-24px.svg';
-import {Link, useNavigate} from "react-router-dom";
-import {useEffect, useState, useRef} from 'react';
 import axios from "axios";
-import './AddInventory.scss'
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import arrowback from '../../assets/icons/arrow_back-24px.svg';
+import './AddInventory.scss';
 
 function AddInventory() {
     //Get warehouse list for the dropdown in the form
     const [warehouseList, setWarehouseList] = useState([]);
 
-    //const baseURL = import.meta.env.VITE_API_URL; as the env file is ignored in git, so hard-code the baseURL now.
-    const baseURL = "http://localhost:3000/api";
+    const baseURL = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
         try {
@@ -76,12 +75,10 @@ function AddInventory() {
             quantity: Number((status === "Out of Stock") ? "0" : quantity),
             warehouse_id:warehouseId
         }
-        console.log(newInventory)
 
         try{
             const res = await axios.post(`${baseURL}/inventories`,newInventory);
             alert("The item has been created successfully.");
-            console.log(res);
         }catch (e){
             alert(e.response.data.message);
         }

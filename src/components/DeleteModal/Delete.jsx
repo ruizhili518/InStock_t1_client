@@ -1,6 +1,6 @@
-import './Delete.scss';
-import close from '../../assets/icons/close-24px.svg';
 import axios from 'axios';
+import close from '../../assets/icons/close-24px.svg';
+import './Delete.scss';
 
 export default function DeleteModal(props) {
     const modalState = props.toggle;
@@ -8,8 +8,7 @@ export default function DeleteModal(props) {
     const action = props.action;
 
     // Delete warehouse on click Delete button
-    // const baseURL = import.meta.env.VITE_API_URL;
-    const baseURL = "http://localhost:3000/api";
+    const baseURL = import.meta.env.VITE_API_URL;
     
     const deleteWarehouse = async(warehouseId) => {
         try {

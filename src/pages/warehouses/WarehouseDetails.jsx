@@ -7,8 +7,7 @@ import WarehouseInfo from '../../components/WarehouseDetails/WarehouseDetails.js
 const WarehouseDetails = () => {
     const [warehouse,setWarehouse] = useState([]);
 
-    // const baseURL = import.meta.env.VITE_API_URL;
-    const baseURL = 'http://localhost:3000/api'
+    const baseURL = import.meta.env.VITE_API_URL;
 
     //Fetch warehouse details
     const { warehouseid } = useParams(); 
