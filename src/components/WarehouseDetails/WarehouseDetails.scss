@@ -1,0 +1,118 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
+@use "sass:map";
+
+.warehouse-details {
+    background-color: $IS-white;
+    display: flex;
+    flex-direction: column;
+    margin: -3rem 1rem 1rem;
+    border-radius: 4px;
+    @include tablet{
+        margin: -4.75rem 2rem 1rem;
+    }
+    @include desktop {
+        margin: -4.75rem 6rem 1rem;
+    }
+    &__heading {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px $IS-cloud;
+        padding: 1rem;
+        @include tablet {
+            padding: 1rem 2rem;
+        }
+        &-1 {
+            display: flex;
+            align-items: center;
+            column-gap: 0.5rem;
+            p {
+                font-size: map.get($text-size,h1);
+                font-weight: 600;
+                @include tablet {
+                    font-size: 32px;
+                }
+            }
+        }
+        &-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 4px;
+            background-color: $IS-indigo;
+            color:$IS-white;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 20px;
+            a {
+                display: flex;
+                text-decoration: none;
+            }
+            img {
+                width: 1rem;
+                height: auto;
+            }
+            p {
+                display: none;
+            }
+            @include tablet {
+                width: auto;
+                padding: 0 1rem;
+                p {
+                    display: block;
+                    color: $IS-white;
+                }
+            }
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+        @include tablet {
+            padding: 1rem 2rem;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        &-1 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-bottom: 2rem;
+            p:first-child {
+                width: 100%;;
+            }
+            @include tablet {
+                border-right: solid 1px $IS-cloud;
+                width: 45%;
+                flex-direction: column;
+            }
+        }
+        &-2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @include tablet {
+                padding-left: 2rem;
+                flex-grow: 1;
+                justify-content: flex-start;
+                column-gap: 3rem;
+            }
+            @include desktop {
+                column-gap: 6rem;
+            }
+        }
+    }
+    &--heading {
+        font-size: map.get($text-size,p3);
+        color: $IS-slate;
+        margin-bottom: 4px;
+        @include tablet {
+            font-size: 12px;
+        }
+    }
+    
+}

@@ -1,0 +1,43 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
+@use "sass:map";
+
+.warehouse {
+    background-color: $IS-white;
+    margin: -4rem 1rem 2rem;
+    padding: 2rem 0rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        padding: 0 1rem 1rem;
+        &--title {
+            font-weight: 600;
+            font-size: map.get($text-size,h1);
+            @include tablet {
+                font-size: 32px;
+            }
+        }
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            column-gap: 1rem;
+            padding: 2rem 2rem;
+            height: 6rem;
+            &--title {
+                width: 100%;
+            }
+        }
+    }
+    @include tablet {
+        margin: -6rem 1rem 2rem;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    @include desktop {
+        margin: -6rem 6rem 2rem;
+    }
+}

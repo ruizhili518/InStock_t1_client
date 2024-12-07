@@ -1,0 +1,173 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
+.warehouse-edit {
+  background-color: $IS-white;
+  margin: -4rem 1rem 2rem;
+  border: solid 1px $IS-cloud;
+  border-radius: 4px;
+
+  @include tablet {
+	margin: -6rem 1rem 2rem;
+  }
+  @include desktop {
+	margin: -6rem 6rem 2rem;
+  }
+
+  &__header {
+	display: flex;
+	padding: 32px 16px 24px;
+	border-bottom: 1px solid $IS-cloud;
+	gap: 4px;
+
+	h1 {
+	  font-weight: 600;
+	  font-size: map-get($text-size,h1);
+	  line-height: map-get($line-height,h1);
+	  color: $IS-black;
+	  @include tablet {
+		font-size: map-get($lg-text-size,h1);
+		line-height: map-get($lg-line-height,h1);
+	  }
+	}
+
+	.back-button {
+	  background: none;
+	  border: none;
+	  cursor: pointer;
+
+	  &:hover {
+		opacity: 0.8;
+	  }
+	}
+  }
+
+  &__content {
+	display: flex;
+	flex-direction: column;
+
+	@include tablet{
+	  flex-direction: row;
+	}
+  }
+
+  &__section {
+	flex: 1;
+	padding:24px;
+
+
+	h2 {
+	  color: $IS-black;
+	  font-size: map-get($text-size,h2);
+	  line-height: map-get($line-height,h2);
+	  font-weight: 600;
+	  @include tablet{
+		font-size: map-get($lg-text-size,h2);
+		line-height: map-get($lg-line-height,h2);
+	  }
+	}
+  }
+  &__divider{
+	height: 1px;
+	width: 100%;
+	background-color: $IS-cloud;
+	margin: 20px 0;
+
+	@include tablet{
+	  width: 1px;
+	  height: auto;
+	}
+  }
+
+  &__form-group {
+	margin-top: 16px;
+	label {
+	  display: block;
+	  font-size: map-get($text-size,p2);
+	  line-height: map-get($line-height,p1);
+	  font-weight: 600;
+	  color: $IS-black;
+	  margin-bottom: 4px;
+	  @include tablet{
+		font-size: map-get($lg-text-size,p1);
+		line-height: map-get($lg-line-height,p1);
+	  }
+	}
+
+	input {
+	  width: 100%;
+	  height: 36px;
+	  padding: 0 16px;
+	  border: 1px solid $IS-cloud;
+	  border-radius: 20px;
+	  font-size: map-get($text-size,p2);
+	  color: $IS-black;
+	  @include tablet{
+		height: 38px;
+		font-size: map-get($lg-text-size,p2);
+	  }
+
+	  &:focus {
+		outline: none;
+		border-color: $IS-indigo;
+	  }
+	}
+  }
+
+  &__actions {
+	display: flex;
+	background-color: $IS-light-grey;
+	padding: 24px;
+	gap: 16px;
+
+	@include tablet{
+	  flex-direction: row;
+	  justify-content: flex-end;
+	}
+
+	button {
+	  height: 36px;
+	  line-height: 36px;
+	  width: 50%;
+	  padding:0 16px;
+	  border-radius: 20px;
+	  font-size: map-get($text-size,p2);
+	  cursor: pointer;
+
+	  @include tablet{
+		height: 38px;
+		width: auto;
+		font-size: map-get($lg-text-size,p2);
+	  }
+
+	  &.cancel {
+		background: white;
+		border: 1px solid $IS-cloud;
+		color: $IS-slate;
+
+		a {
+			text-decoration: none;
+
+		}
+
+		&:hover {
+		  border: 1px solid $IS-indigo;
+
+		  a {
+			color: $IS-indigo;
+		  }
+		}
+	  }
+
+	  &.save {
+		background: $IS-indigo;
+		border: none;
+		color: white;
+
+		&:hover {
+		  background: $IS-graphite;
+		}
+	  }
+	}
+  }
+}
+
