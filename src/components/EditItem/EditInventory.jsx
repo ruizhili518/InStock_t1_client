@@ -120,7 +120,7 @@ export default function EditInventory() {
                 <h1>Edit New Inventory Item</h1>
             </div>
             <form onSubmit={handleSubmit}>
-                <div className='inventory-edit_content'>
+                <div className='inventory-edit__content'>
                     <section className='inventory-edit__section'>
                         <h2>Item Details</h2>
                         <div className='inventory-edit__form-field'>
@@ -234,7 +234,7 @@ export default function EditInventory() {
                         </Link>
                     </button>
                     <button type="submit" className="save">
-                        + Edit Item
+                        Save
                     </button>
                 </div>
             </form>

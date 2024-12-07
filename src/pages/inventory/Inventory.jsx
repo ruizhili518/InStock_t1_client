@@ -12,6 +12,8 @@ import DeleteModal from "../../components/DeleteModal/DeleteInventory";
 
 
 const Inventory = () => {
+  const baseURL = import.meta.env.VITE_API_URL;
+
   const [inventoryList, setInventoryList] = useState([]); 
   const [modalState, setModalState] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -19,7 +21,7 @@ const Inventory = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/inventories");
+        const response = await axios.get(`${baseURL}/inventories`);
         setInventoryList(response.data);
       } catch (error) {
         console.error("Error fetching inventory data:", error);

@@ -133,6 +133,9 @@
             @include tablet {
                 display: table-cell;
                 vertical-align: middle;
+                p{
+                    color: $IS-slate;
+                }
             }
             &--first{
                 @include tablet {
@@ -141,6 +144,8 @@
             }
             &--icon{
                 vertical-align: middle;
+                width: 1rem;
+                height: auto;
             }
         }
         &--value{

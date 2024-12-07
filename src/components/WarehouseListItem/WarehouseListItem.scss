@@ -54,11 +54,14 @@
         column-gap: 1.5rem;
         background-color: $IS-light-grey;
         font-size: 12px;
-        color: $IS-slate;
-        > li {
+        li {
             display: flex;
             align-items: center;
             column-gap: 4px;
+            color: $IS-slate;
+            p{
+                color: $IS-slate;
+            }
             > img {
                 width: 1rem;
                 height: auto;
