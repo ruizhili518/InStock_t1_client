@@ -3,7 +3,7 @@
 .warehouse-edit {
   background-color: $IS-white;
   margin: -4rem 1rem 2rem;
-  border: solid 1px $IS-cloud;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 
   @include tablet {

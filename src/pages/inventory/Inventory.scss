@@ -15,8 +15,7 @@
         padding-bottom: 0;
     }
     @include desktop {
-        width: $desktop;
-        margin: -6rem auto 2rem;
+        margin: -6rem 6rem 2rem;
     }
 
     &__header {

@@ -96,8 +96,8 @@
         column-gap: 1.5rem;
         border-bottom: solid 1px $IS-cloud;
         padding: 1rem 2rem;
-        &:last-child {
-            border: none;
+        &:last-of-type {
+            border-bottom: none;
         }
         > li {
             display: flex;
